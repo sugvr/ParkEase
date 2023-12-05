@@ -1,2 +1,2 @@
-# ParEase
+# ParKEase
 WebApp for parkingLots reservations. 
