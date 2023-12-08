@@ -3,6 +3,7 @@ export const NAV_LINKS = [
     { href: '/', key: 'aboutUs', label: 'About Us' },
     { href: '/', key: 'how_parkease_work', label: 'How ParkEase Work?' },
     { href: '/', key: 'support', label: 'Support' },
+    { href: '/', key: 'availablePArkings', label: 'Available Parkings' },
   ];
   
   // CAMP SECTION
