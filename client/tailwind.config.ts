@@ -50,4 +50,5 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: ['animate-[slide-right_1s_ease-in-out]']
 };
