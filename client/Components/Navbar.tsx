@@ -1,8 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import Button from "./Button"
-import { NAV_LINKS } from "@/Constants"
+import { Colors_ToUse, NAV_LINKS } from "@/Constants"
 import menu from "../public/menu-svgrepo-com.svg"
+import Getcolor from "@/Constants/GetColors"
 
 const Navbar = () => {
   return (
@@ -10,8 +11,9 @@ const Navbar = () => {
       <Link href="#landing">
         <div className="border-4 border-black" />
         <h1 className="text-2xl py-2 font-bold">
-          <span className="text-amber-500">Park</span>Ease
-        </h1>
+            <span className={`text-${Getcolor(1)}`}>Park</span>Ease
+          </h1>
+
         <div className="border-4 border-black" />
       </Link>
 
@@ -27,10 +29,9 @@ const Navbar = () => {
         <Button
           type="button"
           title="Login"
-          variant="btn_dark_green"
+          variant="btn_black"
         />
       </div>
-
       <Image
         src={menu}
         alt="menu"

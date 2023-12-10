@@ -1,3 +1,9 @@
+export const Colors_ToUse =[
+  {primary: "amber-500",
+  second: "gray-30",
+  tertiary: "jet-30"}
+];
+
 // nav section
 export const NAV_LINKS = [
     { href: '#about', key: 'aboutUs', label: 'About Us' },
@@ -5,10 +11,6 @@ export const NAV_LINKS = [
     { href: '/', key: 'how_parkease_work', label: 'How ParkEase Work?' },
     { href: '/', key: 'support', label: 'Support' },
     { href: '/', key: 'reviews', label: 'Reviews' },
-  ];
-  
-  // CAMP SECTION
-  export const PEOPLE_URL = [
   ];
   
   // FEATURES SECTION
