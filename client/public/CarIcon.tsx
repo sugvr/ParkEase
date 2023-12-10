@@ -5,7 +5,7 @@ interface CarIconProps {
 }
 
 const CarIcon: FunctionComponent<CarIconProps> = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" className={`w-8 h-11 ${className}`}
+    <svg xmlns="http://www.w3.org/2000/svg" className={`${className}`}
         height="100" width="100"
         viewBox="0 150 1300 500"
         stroke="currentColor">

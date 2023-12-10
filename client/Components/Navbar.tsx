@@ -7,8 +7,12 @@ import menu from "../public/menu-svgrepo-com.svg"
 const Navbar = () => {
   return (
     <nav className="sticky top-0 bg-white flexBetween max-container padding-container relative z-30 py-5">
-      <Link href="/">
-        <h1 className="text-5xl py-2 text-teal-500 font-bold">ParkEase</h1>
+      <Link href="#landing">
+        <div className="border-4 border-black" />
+        <h1 className="text-2xl py-2 font-bold">
+          <span className="text-amber-500">Park</span>Ease
+        </h1>
+        <div className="border-4 border-black" />
       </Link>
 
       <ul className="hidden h-full gap-12 lg:flex">
@@ -20,14 +24,14 @@ const Navbar = () => {
       </ul>
 
       <div className="lg:flexCenter hidden">
-        <Button 
+        <Button
           type="button"
           title="Login"
           variant="btn_dark_green"
         />
       </div>
 
-      <Image 
+      <Image
         src={menu}
         alt="menu"
         width={32}

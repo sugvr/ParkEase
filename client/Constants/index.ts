@@ -1,9 +1,10 @@
-// NAVIGATION
+// nav section
 export const NAV_LINKS = [
-    { href: '/', key: 'aboutUs', label: 'About Us' },
+    { href: '#about', key: 'aboutUs', label: 'About Us' },
+    { href: '#features', key: 'features', label: 'Features' },
     { href: '/', key: 'how_parkease_work', label: 'How ParkEase Work?' },
     { href: '/', key: 'support', label: 'Support' },
-    { href: '/', key: 'availablePArkings', label: 'Available Parkings' },
+    { href: '/', key: 'reviews', label: 'Reviews' },
   ];
   
   // CAMP SECTION
@@ -13,18 +14,18 @@ export const NAV_LINKS = [
   // FEATURES SECTION
   export const FEATURES = [
     {
-      title: 'Real maps can be offline',
+      title: 'Real time reservations',
       icon: '/map.svg',
       variant: 'green',
       description:
-        'We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location',
+        'Real-time information on parking space availability and the ability to make immediate reservations.',
     },
     {
-      title: 'Set an adventure schedule',
-      icon: '/calendar.svg',
+      title: 'Secure Mobile Payments',
+      icon: '',
       variant: 'green',
       description:
-        "Schedule an adventure with friends. On holidays, there are many interesting offers from Hilink. That way, there's no more discussion",
+        "Integration of secure payment systems allowing users to make transactions directly within the application.",
     },
     {
       title: 'Technology using augment reality',
@@ -34,11 +35,25 @@ export const NAV_LINKS = [
         'Technology uses augmented reality as a guide to your hiking trail in the forest to the top of the mountain. Already supported by the latest technology without an internet connection',
     },
     {
-      title: 'Many new locations every month',
+      title: 'Rating and Review System',
       icon: '/location.svg',
       variant: 'orange',
       description:
-        'Lots of new locations every month, because we have a worldwide community of climbers who share their best experiences with climbing',
+        'Capability for users to rate and leave reviews about parking spaces, providing valuable feedback to other users',
+    },
+    {
+      title: 'QR Code Scanning',
+      icon: '/location.svg',
+      variant: 'orange',
+      description:
+        'A system that allows users to scan QR codes at the location to access their reserved parking space.',
+    },
+    {
+      title: 'Reservation history',
+      icon: '/location.svg',
+      variant: 'orange',
+      description:
+        'A section where users can view their reservation history, track expenses, and access receipts.',
     },
   ];
   
@@ -47,18 +62,12 @@ export const NAV_LINKS = [
     {
       title: 'Learn More',
       links: [
-        'About Hilink',
-        'Press Releases',
+        'About ParkEase',
         'Environment',
-        'Jobs',
         'Privacy Policy',
         'Contact Us',
       ],
-    },
-    {
-      title: 'Our Community',
-      links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
-    },
+    }
   ];
   
   export const FOOTER_CONTACT_INFO = {
