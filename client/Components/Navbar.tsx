@@ -8,7 +8,7 @@ import Getcolor from "@/Constants/GetColors"
 const Navbar = () => {
   return (
     <nav className="sticky top-0 bg-white flexBetween max-container padding-container relative z-30 py-5">
-      <Link href="#landing">
+      <Link href="/">
         <div className="border-4 border-black" />
         <h1 className="text-2xl py-2 font-bold">
           <span className={`text-${Getcolor(1)}`}>Park</span>Ease
