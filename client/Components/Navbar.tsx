@@ -3,12 +3,18 @@ import Link from "next/link"
 import Button from "./Button"
 import { NAV_LINKS } from "@/Constants"
 import menu from "../public/menu-svgrepo-com.svg"
+import Getcolor from "@/Constants/GetColors"
 
 const Navbar = () => {
   return (
     <nav className="sticky top-0 bg-white flexBetween max-container padding-container relative z-30 py-5">
-      <Link href="/">
-        <h1 className="text-5xl py-2 text-teal-500 font-bold">ParkEase</h1>
+      <Link href="#landing">
+        <div className="border-4 border-black" />
+        <h1 className="text-2xl py-2 font-bold">
+          <span className={`text-${Getcolor(1)}`}>Park</span>Ease
+        </h1>
+
+        <div className="border-4 border-black" />
       </Link>
 
       <ul className="hidden h-full gap-12 lg:flex">
@@ -20,14 +26,14 @@ const Navbar = () => {
       </ul>
 
       <div className="lg:flexCenter hidden">
-        <Button 
+        <Button
           type="button"
+          icon='/login.svg'
           title="Login"
-          variant="btn_dark_green"
+          bgColor={`${Getcolor(1)}`}
         />
       </div>
-
-      <Image 
+      <Image
         src={menu}
         alt="menu"
         width={32}

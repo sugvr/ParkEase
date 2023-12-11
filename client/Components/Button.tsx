@@ -4,17 +4,17 @@ type ButtonProps = {
   type: 'button' | 'submit';
   title: string;
   icon?: string;
-  variant: string;
   full?: boolean;
+  bgColor: string;
 }
 
-const Button = ({ type, title, icon, variant, full }: ButtonProps) => {
+const Button = ({ type, title, icon, full, bgColor }: ButtonProps) => {
   return (
     <button
-    className={`flexCenter gap-3 rounded-full border ${variant} ${full && 'w-full'}`}
+    className={`bg-${bgColor} text-white font-bold py-2 px-4 rounded-full flexCenter ${full && 'w-full'}`}
       type={type}
     >
-      {icon && <Image src={icon} alt={title} width={24} height={24} />}
+      {icon && <Image src={icon} alt={title} width={24} height={24} className="m-2"/>}
       <label className="bold-16 whitespace-nowrap cursor-pointer">{title}</label>
     </button>
   )
