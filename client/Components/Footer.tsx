@@ -1,4 +1,5 @@
 import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from '@/Constants'
+import Getcolor from '@/Constants/GetColors'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -8,8 +9,12 @@ const Footer = () => {
     <footer className="flexCenter mb-24">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
-            <Image src="hilink-logo.svg" alt="logo" width={74} height={29}/>
+          <Link href="#landing" className="mb-10">
+            <div className="border-4 border-black" />
+            <h1 className="text-2xl py-2 font-bold">
+              <span className={`text-${Getcolor(1)}`}>Park</span>Ease
+            </h1>
+            <div className="border-4 border-black" />
           </Link>
 
           <div className='flex flex-wrap gap-10 sm:justify-between md:flex-1'>

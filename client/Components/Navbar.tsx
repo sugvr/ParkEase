@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import Button from "./Button"
-import { Colors_ToUse, NAV_LINKS } from "@/Constants"
+import { NAV_LINKS } from "@/Constants"
 import menu from "../public/menu-svgrepo-com.svg"
 import Getcolor from "@/Constants/GetColors"
 
@@ -11,8 +11,8 @@ const Navbar = () => {
       <Link href="#landing">
         <div className="border-4 border-black" />
         <h1 className="text-2xl py-2 font-bold">
-            <span className={`text-${Getcolor(1)}`}>Park</span>Ease
-          </h1>
+          <span className={`text-${Getcolor(1)}`}>Park</span>Ease
+        </h1>
 
         <div className="border-4 border-black" />
       </Link>
@@ -28,8 +28,9 @@ const Navbar = () => {
       <div className="lg:flexCenter hidden">
         <Button
           type="button"
+          icon='/login.svg'
           title="Login"
-          variant="btn_black"
+          bgColor={`${Getcolor(1)}`}
         />
       </div>
       <Image

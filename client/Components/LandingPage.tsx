@@ -16,19 +16,30 @@ const Hero = () => {
                     <span className={`text-${Getcolor(1)}`}> Park</span>Ease
                 </h1>
                 <CarIcon className="transition-transform transform hover:translate-x-40 ease-in-out duration-1000" />
-                <div className="border-t-2 border-solid border-amber-400 w-16" />
                 <p className={`regular-16 mt-6 text-${Getcolor(2)} xl:max-w-[520px]`}>
-                        ParkEase simplifies the parking experience by enabling users to effortlessly find, reserve, and pay for parking spaces, ensuring a stress-free and efficient urban mobility solution.
-                    </p>
+                    ParkEase simplifies the parking experience by enabling users to effortlessly find, reserve, and pay for parking spaces, ensuring a stress-free and efficient urban mobility solution.
+                </p>
                 <div className="my-11 flex flex-wrap gap-5">
-                    <p className="bold-16 lg:bold-20 text-blue-70">243
+                     <p className="bold-16 lg:bold-20 text-blue-70">243
                         <span className="regular-16 lg:regular-20 ml-1">Excellent Reviews</span>
                     </p>
                 </div>
-
                 <div className="flex flex-col w-full gap-3 sm:flex-row">
+          <Button 
+            type="button" 
+            title="Reviews"
+            icon='rating.svg'
+            bgColor={`${Getcolor(1)}`}
+          />
+          <Button 
+            type="button" 
+            title="How we work?" 
+            icon='/work.svg'
+            bgColor={`${Getcolor(1)}`}
+          />
+        </div>
 
-                </div>
+               
             </div>
 
             <div className="relative flex flex-1 items-start justify-center">
