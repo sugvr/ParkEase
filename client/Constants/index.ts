@@ -2,8 +2,8 @@
 
 export const Colors_ToUse =[
   {primary: "amber-500",
-  second: "gray-30",
-  tertiary: "jet-30"}
+  second: "black",
+  tertiary: "white"}
 ];
 
 // nav section
@@ -11,7 +11,7 @@ export const NAV_LINKS = [
     { href: '#aboutus', key: 'aboutus', label: 'About Us' },
     { href: '#features', key: 'features', label: 'Features' },
     { href: '/', key: 'how_parkease_work', label: 'How ParkEase Work?' },
-    { href: '/', key: 'support', label: 'Support' },
+    { href: '/#support', key: 'support', label: 'Support' },
     { href: '/', key: 'reviews', label: 'Reviews' },
   ];
   
@@ -67,11 +67,11 @@ export const NAV_LINKS = [
     }
   ];
   
-  export const FOOTER_CONTACT_INFO = {
+  export const CONTACT_INFO = {
     title: 'Contact Us',
     links: [
-      { label: 'Admin Officer', value: '123-456-7890' },
-      { label: 'Email Officer', value: 'hilink@akinthil.com' },
+      { label: 'Phone', value: '123-456-7890' },
+      { label: 'Email', value: 'park.ease@gmail.com' },
     ],
   };
   

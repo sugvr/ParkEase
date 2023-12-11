@@ -4,6 +4,7 @@ import LandingPage from '../Components/LandingPage'
 import Footer from '@/Components/Footer'
 import Features from '@/Components/Features'
 import About from '@/Components/About'
+import Support from '@/Components/Support'
 
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <About/>
       <Section id='features'/>
       <Features/>
+      <Section id ='support'/>
+      <Support/>
       <Section id =""/>
       <Footer/>
     </section>

@@ -1,5 +1,6 @@
-import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from '@/Constants'
+import { CONTACT_INFO, FOOTER_LINKS, SOCIALS } from '@/Constants'
 import Getcolor from '@/Constants/GetColors'
+import supportData from '@/Constants/SupportData'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -31,8 +32,8 @@ const Footer = () => {
             ))}
 
             <div className="flex flex-col gap-5">
-              <FooterColumn title={FOOTER_CONTACT_INFO.title}>
-                {FOOTER_CONTACT_INFO.links.map((link) => (
+              <FooterColumn title={CONTACT_INFO.title}>
+                {CONTACT_INFO.links.map((link) => (
                   <Link
                     href="/"
                     key={link.label}
