@@ -11,15 +11,14 @@ export default function Home() {
   return (
     <section>
       <Navbar />
-      <Section id='landing'/>
-      <LandingPage/>
-      <Section id='aboutus'/>
+      <Section id = 'main'/>
+      <LandingPage />
+      <Section id = 'aboutus'/>
       <About/>
-      <Section id='features'/>
+      <Section id = 'features'/>
       <Features/>
-      <Section id ='support'/>
+      <Section id = 'support'/>
       <Support/>
-      <Section id =""/>
       <Footer/>
     </section>
   )

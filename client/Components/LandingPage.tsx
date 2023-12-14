@@ -3,7 +3,6 @@ import Button from './Button'
 import likingGuy from '../public/newLinkingGuy.png'
 import HeroCarImage from '../public/HeroCarImage.jpg'
 import CarIcon from '../public/CarIcon'
-import { Colors_ToUse } from '@/Constants'
 import Getcolor from '@/Constants/GetColors'
 
 
