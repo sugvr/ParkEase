@@ -1,4 +1,4 @@
-import { FEATURES } from '@/Constants'
+import { FEATURES } from '@/Constants/FeaturesData'
 import Image from 'next/image'
 import React from 'react'
 import CarIcon from '../public/CarIcon'

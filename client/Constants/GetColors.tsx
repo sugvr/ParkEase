@@ -1,8 +1,9 @@
-import { Colors_ToUse } from './index'
+
+import {ColorToUSe} from './ColorsData'
 
 const Getcolor = (number: number) => {
     return (
-        Colors_ToUse.map((color) => {
+        ColorToUSe.map((color) => {
             if (number == 1) {
                 return color.primary
             } else if (number == 2) {

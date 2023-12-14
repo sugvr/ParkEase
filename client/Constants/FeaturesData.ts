@@ -1,21 +1,7 @@
 
 
-export const Colors_ToUse =[
-  {primary: "amber-500",
-  second: "black",
-  tertiary: "white"}
-];
 
-// nav section
-export const NAV_LINKS = [
-    { href: '#aboutus', key: 'aboutus', label: 'About Us' },
-    { href: '#features', key: 'features', label: 'Features' },
-    { href: '/', key: 'how_parkease_work', label: 'How ParkEase Work?' },
-    { href: '/#support', key: 'support', label: 'Support' },
-    { href: '/', key: 'reviews', label: 'Reviews' },
-  ];
   
-  // FEATURES SECTION
   export const FEATURES = [
     {
       title: 'Real time reservations',
@@ -53,35 +39,4 @@ export const NAV_LINKS = [
         'A section where users can view their reservation history, track expenses, and access receipts.',
     },
   ];
-  
-  // FOOTER SECTION
-  export const FOOTER_LINKS = [
-    {
-      title: 'Learn More',
-      links: [
-        'About ParkEase',
-        'Environment',
-        'Privacy Policy',
-        'Contact Us',
-      ],
-    }
-  ];
-  
-  export const CONTACT_INFO = {
-    title: 'Contact Us',
-    links: [
-      { label: 'Phone', value: '123-456-7890' },
-      { label: 'Email', value: 'park.ease@gmail.com' },
-    ],
-  };
-  
-  export const SOCIALS = {
-    title: 'Social',
-    links: [
-      '/facebook.svg',
-      '/instagram.svg',
-      '/twitter.svg',
-      '/youtube.svg',
-      '/wordpress.svg',
-    ],
-  };
+
