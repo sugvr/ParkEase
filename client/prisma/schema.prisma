@@ -11,10 +11,33 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  password String
-  name String
-  role String
-  //reservation Reservation[]
+  UserId Int @UserId @default(autoincrement())
+  Email String @unique
+  Password String
+  Name String
+  Role String
+}
+
+model Lot {
+  LotId     Int     @LotId  @default(autoincrement())
+  LotName   String  @unique
+  Capacity  Int
+  IsActive  Boolean @default(true)
+}
+
+model Reservation {
+  ReservationId Int @ReservationId @default(autoincrement())
+  User          User   @relation(fields: [UserId], references: [UserId])
+  UserId        Int    @UserId
+  Lot           Lot    @relation(fields: [LotId], references: [LotId])
+  LotId         Int
+  StartDate     DateTime
+  EndDate       DateTime
+  Comment       String?
+}
+
+model HourlyPricePerLot {
+  PriceId Int @PriceId @default(autoincrement())
+  NumberOfHour Int
+  PricePerHour Float?
 }
