@@ -15,6 +15,7 @@ import { Button } from '../LoginComponents/button';
 import Link from 'next/link';
 import GoogleSignInButton from '../GoogleSignInButton';
 import { useRouter } from 'next/navigation';
+import Getcolor from "@/Constants/GetColors"; 
 
 const FormSchema = z
   .object({
@@ -139,7 +140,7 @@ const SignUpPage = () => {
       <p className='text-center text-sm text-gray-600 mt-2'>
         If you don&apos;t have an account, please&nbsp;
         <Link className='text-blue-500 hover:underline' href='/sign-in'>
-          Sign in
+        <span className={`text-${Getcolor(1)}`}>Sign</span><span className='text-black'>Up</span>
         </Link>
       </p>
     </Form>

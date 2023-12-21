@@ -14,6 +14,7 @@ import { Input } from '../LoginComponents/input';
 import { Button } from '../LoginComponents/button';
 import Link from 'next/link';
 import GoogleSignInButton from '../GoogleSignInButton';
+import Getcolor from "@/Constants/GetColors";
 
 const FormSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
@@ -82,7 +83,7 @@ const SignInForm = () => {
       <p className='text-center text-sm text-gray-600 mt-2'>
         If you don&apos;t have an account, please&nbsp;
         <Link className='text-blue-500 hover:underline' href='/sign-up'>
-          Sign up
+          <span className={`text-${Getcolor(1)}`}>Sign</span><span className='text-black'>In</span>
         </Link>
       </p>
     </Form>
