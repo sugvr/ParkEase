@@ -2,11 +2,11 @@ import Getcolor from "@/Constants/GetColors";
 
 const Profile = () => {
     return (
-        <body className="relative bg-yellow-50 overflow-hidden max-h-screen">
-            <header className="fixed right-0 top-0 left-60 bg-yellow-50 py-3 px-4 h-16">
+        <body className="relative bg-white overflow-hidden max-h-screen">
+            <header className="fixed right-0 top-0 left-60 bg-amber-500 py-3 px-4 h-16">
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center justify-between">
-                        yellow
+                        
                     </div>
                 </div>
             </header>
