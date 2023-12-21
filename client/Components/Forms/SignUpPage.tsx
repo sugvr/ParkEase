@@ -1,5 +1,4 @@
 'use client';
-
 import { useForm } from 'react-hook-form';
 import {
   Form,
@@ -8,11 +7,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../UI/form';
+} from '../LoginComponents/form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Input } from '../UI/input';
-import { Button } from '../UI/button';
+import { Input } from '../LoginComponents/input';
+import { Button } from '../LoginComponents/button';
 import Link from 'next/link';
 import GoogleSignInButton from '../GoogleSignInButton';
 import { useRouter } from 'next/navigation';
@@ -58,7 +57,7 @@ const SignUpPage = () => {
   });
 
   if (res.ok) {
-    router.push('/sign-in');
+    router.push('/myaccount');
   }else {
     console.error('Registration failed');
   }

@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import Button from './Button'
-import likingGuy from '../public/newLinkingGuy.png'
-import HeroCarImage from '../public/HeroCarImage.jpg'
-import CarIcon from '../public/CarIcon'
+import Button from '../Button'
+import HeroCarImage from '../../public/HeroCarImage.jpg'
+import CarIcon from '../../public/CarIcon'
 import Getcolor from '@/Constants/GetColors'
 
 

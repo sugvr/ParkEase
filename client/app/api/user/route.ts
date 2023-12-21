@@ -34,14 +34,13 @@ export async function POST(req: Request) {
         Password: encryptedPassword,
         Name: name,
         Role: "user", // Add the 'Role' property with a default value
-        CreatedAt: new Date(), // Add the 'CreatedAt' property with the current date
       },
     });
     const { Password: newUserPassword, ...rest } = newUser;
     return NextResponse.json({
       user: rest,
       message: "User created successfully",
-      status: 201,
+      status: 200,
     });
   } catch (error: any) {
     return NextResponse.json({
