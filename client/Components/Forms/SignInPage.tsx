@@ -83,7 +83,7 @@ const SignInForm = () => {
       <p className='text-center text-sm text-gray-600 mt-2'>
         If you don&apos;t have an account, please&nbsp;
         <Link className='text-blue-500 hover:underline' href='/sign-up'>
-          <span className={`text-${Getcolor(1)}`}>Sign</span><span className='text-black'>In</span>
+          <span className={`text-${Getcolor(1)}`}>Sign</span><span className='text-black'>Up</span>
         </Link>
       </p>
     </Form>
