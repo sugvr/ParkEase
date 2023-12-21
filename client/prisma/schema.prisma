@@ -12,6 +12,7 @@ model User {
   Email        String        @unique
   Password     String
   Name         String
+  CreatedAt    DateTime      @default(now())
   Role         String
   Reservations Reservation[]
 }
@@ -21,7 +22,7 @@ model Lot {
   LotName      String        @unique
   Capacity     Int
   IsActive     Boolean       @default(true)
-  Reservations Reservation[] // Add this line to represent the relation with Reservation
+  Reservations Reservation[]
 }
 
 model Reservation {

@@ -7,7 +7,7 @@ import Getcolor from "@/Constants/GetColors"
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 bg-white flexBetween max-container padding-container relative z-30 py-5">
+    <nav className="sticky top-0 bg-white flexBetween max-container padding-container z-30 py-5">
       <Link href="#main">
         <div className="border-4 border-black" />
         <h1 className="text-2xl py-2 font-bold">
