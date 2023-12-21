@@ -2,68 +2,33 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 datasource supabase {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-<<<<<<< HEAD
-  UserId    Int         @id @default(autoincrement())
-  Email     String      @unique
-  Password  String
-  Name      String
-  Role      String
+  UserId       Int           @id @default(autoincrement())
+  Email        String        @unique
+  Password     String
+  Name         String
+  Role         String
   Reservations Reservation[]
 }
 
 model Lot {
-  LotId     Int         @id @default(autoincrement())
-  LotName   String      @unique
-  Capacity  Int
-  IsActive  Boolean     @default(true)
-  Reservations Reservation[]
+  LotId        Int           @id @default(autoincrement())
+  LotName      String        @unique
+  Capacity     Int
+  IsActive     Boolean       @default(true)
+  Reservations Reservation[] // Add this line to represent the relation with Reservation
 }
 
 model Reservation {
-  ReservationId  Int        @id @default(autoincrement())
-  User           User       @relation(fields: [UserId], references: [UserId])
-  UserId         Int
-  Lot            Lot        @relation(fields: [LotId], references: [LotId])
-  LotId          Int
-  StartDate      DateTime
-  EndDate        DateTime
-  Comment        String?
-}
-
-model HourlyPricePerLot {
-  PriceId        Int      @id @default(autoincrement())
-  NumberOfHour   Int
-  PricePerHour   Float?
-=======
-  UserId Int @id @default(autoincrement())
-  Email String @unique
-  Password String
-  Name String
-  Role String //
-  CreatedAt DateTime // 
-  Reservations Reservation[] //
-}
-
-model Lot {
-  LotId     Int     @id @default(autoincrement())
-  LotName   String  @unique
-  Capacity  Int
-  IsActive  Boolean @default(true)
-  Reservations Reservation[] 
-}
-
-model Reservation {
-  ReservationId Int @id @default(autoincrement())
-  User          User @relation(fields: [UserId], references: [UserId])
+  ReservationId Int      @id @default(autoincrement())
+  User          User     @relation(fields: [UserId], references: [UserId])
   UserId        Int
-  Lot           Lot  @relation(fields: [LotId], references: [LotId])
+  Lot           Lot      @relation(fields: [LotId], references: [LotId])
   LotId         Int
   StartDate     DateTime
   EndDate       DateTime
@@ -71,8 +36,7 @@ model Reservation {
 }
 
 model HourlyPricePerLot {
-  PriceId Int @id @default(autoincrement())
+  PriceId      Int    @id @default(autoincrement())
   NumberOfHour Int
   PricePerHour Float?
->>>>>>> 641c7ff (Added User Sign Up)
 }
