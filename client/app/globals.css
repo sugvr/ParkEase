@@ -157,3 +157,14 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,.3);
+}

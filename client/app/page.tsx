@@ -10,17 +10,17 @@ import Support from '@/Components/Support'
 export default function Home() {
   return (
     <section>
-      <Navbar />
-      <Section id = 'main'/>
-      <LandingPage />
-      <Section id = 'aboutus'/>
-      <About/>
-      <Section id = 'features'/>
-      <Features/>
-      <Section id = 'support'/>
-      <Support/>
-      <Footer/>
-    </section>
+    <Navbar />
+    <Section id = 'main'/>
+    <LandingPage />
+    <Section id = 'aboutus'/>
+    <About/>
+    <Section id = 'features'/>
+    <Features/>
+    <Section id = 'support'/>
+    <Support/>
+    <Footer/>
+  </section>
   )
 }
 

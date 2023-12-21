@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "@supabase/supabase-js": "^2.39.1",
     "next": "14.0.3",
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-feather": "^2.0.10"
+    "react-feather": "^2.0.10",
+    "react-redux": "^9.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",

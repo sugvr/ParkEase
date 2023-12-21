@@ -26,12 +26,14 @@ const Navbar = () => {
       </ul>
 
       <div className="lg:flexCenter hidden">
+      <Link href="/login">
         <Button
           type="button"
           icon='/login.svg'
           title="Login"
           bgColor={`${Getcolor(1)}`}
         />
+        </Link>
       </div>
       <Image
         src={menu}
