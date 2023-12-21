@@ -9,6 +9,7 @@ datasource supabase {
 }
 
 model User {
+<<<<<<< HEAD
   UserId    Int         @id @default(autoincrement())
   Email     String      @unique
   Password  String
@@ -40,4 +41,38 @@ model HourlyPricePerLot {
   PriceId        Int      @id @default(autoincrement())
   NumberOfHour   Int
   PricePerHour   Float?
+=======
+  UserId Int @id @default(autoincrement())
+  Email String @unique
+  Password String
+  Name String
+  Role String //
+  CreatedAt DateTime // 
+  Reservations Reservation[] //
+}
+
+model Lot {
+  LotId     Int     @id @default(autoincrement())
+  LotName   String  @unique
+  Capacity  Int
+  IsActive  Boolean @default(true)
+  Reservations Reservation[] 
+}
+
+model Reservation {
+  ReservationId Int @id @default(autoincrement())
+  User          User @relation(fields: [UserId], references: [UserId])
+  UserId        Int
+  Lot           Lot  @relation(fields: [LotId], references: [LotId])
+  LotId         Int
+  StartDate     DateTime
+  EndDate       DateTime
+  Comment       String?
+}
+
+model HourlyPricePerLot {
+  PriceId Int @id @default(autoincrement())
+  NumberOfHour Int
+  PricePerHour Float?
+>>>>>>> 641c7ff (Added User Sign Up)
 }
