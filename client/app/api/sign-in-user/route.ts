@@ -38,13 +38,12 @@ export async function POST(req: Request) {
       });
     }
     
-    // Create a JWT token for the authenticated user
     const token = sign({ userId: user.UserId }, secretKey, {
-      expiresIn: "1h", // Token expires in 1 hour
+      expiresIn: "1h", 
     });
 
     return NextResponse.json({
-      user: { userId: user.UserId, email: user.Email }, // You can customize the user object as needed
+      user: { userId: user.UserId, email: user.Email }, 
       token,
       message: "Login successful",
       status: 200,
