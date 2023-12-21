@@ -15,13 +15,15 @@ import { Button } from '../LoginComponents/button';
 import Link from 'next/link';
 import GoogleSignInButton from '../GoogleSignInButton';
 import Getcolor from "@/Constants/GetColors";
+import { compare } from 'bcrypt';
+import { generateToken } from '../../app/(auth)/Authentication/Auth';
 
 const FormSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
   password: z
     .string()
     .min(1, 'Password is required')
-    .min(8, 'Password must have than 8 characters'),
+    .min(8, 'Password must have more than 8 characters'),
 });
 
 const SignInForm = () => {
@@ -33,8 +35,31 @@ const SignInForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof FormSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+    try {
+      // Here you should call your backend API to authenticate the user
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || 'Authentication failed');
+      }
+
+      const { token } = await res.json();
+
+      // Now you have the token, you can store it in a secure way (e.g., in a cookie or localStorage)
+      console.log('Token:', token);
+
+      // Redirect to the desired page or handle authentication success
+    } catch (error) {
+      console.error('Authentication error:');
+    }
   };
 
   return (

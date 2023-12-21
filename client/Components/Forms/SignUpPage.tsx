@@ -50,7 +50,7 @@ const SignUpPage = () => {
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     setIsLoading(true);
 
-    const res = await fetch('/api/user', {
+    const res = await fetch('/api/sign-up-newuser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const SignUpPage = () => {
     setIsLoading(false);
 
     if (res.ok) {
-      router.push('/myaccount');
+      router.push('/sign-in');
     } else {
       console.error('Registration failed');
     }
