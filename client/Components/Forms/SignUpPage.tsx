@@ -1,4 +1,5 @@
 'use client';
+
 import { useForm } from 'react-hook-form';
 import {
   Form,
@@ -50,7 +51,7 @@ const SignUpPage = () => {
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     setIsLoading(true);
 
-    const res = await fetch('/api/sign-up-newuser', {
+    const res = await fetch('/api/sign-up', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -136,9 +137,12 @@ const SignUpPage = () => {
             )}
           />
         </div>
-        <Button className='w-full mt-6' type='submit'>
+        <div className='flex items-center justify-center '>
+          <Button className={'mt-6 border flex justify-center border-black text-${Getcolor(1)}'} type='submit'>
           {isLoading ? <Loading /> : 'Sign up'}
         </Button>
+        </div>
+
       </form>
       <div className='mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400'>
         or
@@ -147,7 +151,7 @@ const SignUpPage = () => {
       <p className='text-center text-sm text-gray-600 mt-2'>
         If you don&apos;t have an account, please&nbsp;
         <Link className='text-blue-500 hover:underline' href='/sign-in'>
-          <span className={`text-${Getcolor(1)}`}>Sign</span><span className='text-black'>In</span>
+          <span className={`text-${Getcolor(1)}`}>Sign In</span>
         </Link>
       </p>
     </Form>
