@@ -137,19 +137,21 @@ const SignUpPage = () => {
             )}
           />
         </div>
-        <div className='flex items-center justify-center '>
-          <Button className={'mt-6 border flex justify-center border-black text-${Getcolor(1)}'} type='submit'>
-          {isLoading ? <Loading /> : 'Sign up'}
-        </Button>
+        <div className='flex items-center justify-center'>
+          <Button className={`mt-6 px-6 flex justify-center bg-${Getcolor(1)} hover:bg-amber-400 text-black rounded-full`} type='submit'>
+            {isLoading ? <Loading /> : 'Sign up'}
+          </Button>
         </div>
 
       </form>
       <div className='mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400'>
         or
       </div>
-      <GoogleSignInButton>Sign up with Google</GoogleSignInButton>
-      <p className='text-center text-sm text-gray-600 mt-2'>
-        If you don&apos;t have an account, please&nbsp;
+      <div className='flex items-center justify-center mb-2'>
+        <GoogleSignInButton>Sign up with Google</GoogleSignInButton>
+      </div>
+      <p className='text-center text-sm text-gray-600 mt-4'>
+        If you already have an account, please&nbsp;
         <Link className='text-blue-500 hover:underline' href='/sign-in'>
           <span className={`text-${Getcolor(1)}`}>Sign In</span>
         </Link>

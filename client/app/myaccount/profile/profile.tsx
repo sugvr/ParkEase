@@ -1,12 +1,15 @@
-import Getcolor from "@/Constants/GetColors";
+'use client'
 
-const Profile = () => {
+import Getcolor from "@/Constants/GetColors";
+import { signOut } from "next-auth/react";
+
+const Profile = async () => {
     return (
         <body className="relative bg-white overflow-hidden max-h-screen">
             <header className="fixed right-0 top-0 left-60 bg-amber-500 py-3 px-4 h-16">
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center justify-between">
-                        
+
                     </div>
                 </div>
             </header>
@@ -62,7 +65,9 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className="p-4">
-                        <button type="button" className="inline-flex items-center justify-center h-9 px-4 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition">
+                        <button onClick={() => signOut({
+                            callbackUrl: 'http://localhost:3000/'
+                        })} type="button" className="inline-flex items-center justify-center h-9 px-4 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="" viewBox="0 0 16 16">
                                 <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                             </svg>
@@ -72,7 +77,7 @@ const Profile = () => {
             </aside>
 
             <main className="ml-60 pt-16 max-h-screen overflow-auto">
-                
+
             </main>
         </body>
     );
