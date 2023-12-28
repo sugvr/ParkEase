@@ -1,16 +1,17 @@
+'use client'
 
-import { getServerSession } from "next-auth";
 import Profile from "./profile/profile";
 import { authOptions } from "@/lib/auth";
+import { SessionProvider, getSession } from "next-auth/react";
 
 
 const MyAccount = async () => {
-  const session = await getServerSession(authOptions);
-  console.log(session);
-
+  const session = await getSession(); // Await the getSession() function
   return (
     <>
-      <Profile />
+      <SessionProvider session={session}>
+        <Profile />
+      </SessionProvider>
     </>
   );
 };
