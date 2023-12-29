@@ -1,9 +1,9 @@
 import { aboutData } from '@/Constants/AboutData'
 import Image from 'next/image'
 import React from 'react'
-import CarIcon from '../public/CarIcon'
-import womanParked from '../public/womanParked.jpg'
-import guyParked from '../public/guyPArked.jpg'
+import CarIcon from '../../public/CarIcon'
+import womanParked from '../../public/womanParked.jpg'
+import guyParked from '../../public/guyPArked.jpg'
 import Getcolor from '@/Constants/GetColors'
 
 const About = () => {

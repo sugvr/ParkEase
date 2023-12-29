@@ -1,8 +1,8 @@
 import { FEATURES } from '@/Constants/FeaturesData'
 import Image from 'next/image'
 import React from 'react'
-import CarIcon from '../public/CarIcon'
-import Phone from '../public/phone.png'
+import CarIcon from '../../public/CarIcon'
+import Phone from '../../public/phone.png'
 import Getcolor from '@/Constants/GetColors'
 
 const Features = () => {

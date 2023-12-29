@@ -1,35 +1,35 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
+datasource supabase {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  UserId Int @UserId @default(autoincrement())
-  Email String @unique
-  Password String
-  Name String
-  Role String
+  UserId       Int           @id @default(autoincrement())
+  Email        String        @unique
+  Password     String
+  Name         String
+  CreatedAt    DateTime      @default(now())
+  Role         String
+  Reservations Reservation[]
 }
 
 model Lot {
-  LotId     Int     @LotId  @default(autoincrement())
-  LotName   String  @unique
-  Capacity  Int
-  IsActive  Boolean @default(true)
+  LotId        Int           @id @default(autoincrement())
+  LotName      String        @unique
+  Capacity     Int
+  IsActive     Boolean       @default(true)
+  Reservations Reservation[]
 }
 
 model Reservation {
-  ReservationId Int @ReservationId @default(autoincrement())
-  User          User   @relation(fields: [UserId], references: [UserId])
-  UserId        Int    @UserId
-  Lot           Lot    @relation(fields: [LotId], references: [LotId])
+  ReservationId Int      @id @default(autoincrement())
+  User          User     @relation(fields: [UserId], references: [UserId])
+  UserId        Int
+  Lot           Lot      @relation(fields: [LotId], references: [LotId])
   LotId         Int
   StartDate     DateTime
   EndDate       DateTime
@@ -37,7 +37,7 @@ model Reservation {
 }
 
 model HourlyPricePerLot {
-  PriceId Int @PriceId @default(autoincrement())
+  PriceId      Int    @id @default(autoincrement())
   NumberOfHour Int
   PricePerHour Float?
 }
