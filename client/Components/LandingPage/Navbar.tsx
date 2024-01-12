@@ -1,11 +1,21 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
 import Button from "../Button"
-import {NAV_LINKS} from "@/Constants/NavData"
+import { NAV_LINKS } from "@/Constants/NavData"
 import menu from "../../public/menu-svgrepo-com.svg"
 import Getcolor from "@/Constants/GetColors"
+import { useState } from "react"
+import Sidebar from "./Sidebar"
 
 const Navbar = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <nav className="sticky top-0 bg-white flexBetween max-container padding-container z-30 py-5">
       <Link href="#main">
@@ -25,22 +35,29 @@ const Navbar = () => {
       </ul>
 
       <div className="lg:flexCenter hidden">
-      <Link href="/sign-in">
-        <Button
-          type="button"
-          icon='/login.svg'
-          title="Sign In"
-          bgColor={`${Getcolor(1)}`}
-        />
+        <Link href="/sign-in">
+          <Button
+            type="button"
+            icon='/login.svg'
+            title="Sign In"
+            bgColor={`${Getcolor(1)}`}
+          />
         </Link>
       </div>
-      <Image
-        src={menu}
-        alt="menu"
-        width={32}
-        height={32}
-        className="inline-block cursor-pointer lg:hidden"
-      />
+
+
+      <button onClick={toggleSidebar} className={`lg:hidden p-2 rounded focus:outline-none focus:shadow-outline ${isSidebarOpen ? "hidden" :
+        ""}`}>
+        <Image
+          src="/menu.svg"
+          alt='menu'
+          height={32}
+          width={32}
+          className='inline-block lg:hidden cursor-pointer'
+        />
+      </button>
+
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
     </nav>
   )
 }
