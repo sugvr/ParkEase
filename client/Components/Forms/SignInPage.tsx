@@ -1,6 +1,4 @@
 'use client';
-
-
 import { set, useForm } from 'react-hook-form';
 import {
   Form,
@@ -17,11 +15,10 @@ import { Button } from '../LoginComponents/button';
 import Link from 'next/link';
 import GoogleSignInButton from '../GoogleSignInButton';
 import Getcolor from "@/Constants/GetColors";
-import { compare } from 'bcrypt';
-import { generateToken } from '../../app/(auth)/Authentication/Auth';
 import { signIn } from 'next-auth/react'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Loading from '../loading';
 
 const FormSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
@@ -99,7 +96,7 @@ const SignInForm = () => {
         </div>
         <div className='flex items-center justify-center'>
           <Button className={`px-6 py-2 mt-6 border bg-${Getcolor(1)} rounded-full`} type='submit'>
-            Sign in
+          {isLoading ? <Loading /> : 'Sign In'}
           </Button>
         </div>
       </form>
