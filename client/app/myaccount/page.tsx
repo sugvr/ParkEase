@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 import { SessionProvider } from 'next-auth/react';
 import Sidebar from './sidebar';
@@ -33,6 +34,16 @@ const MyAccount: React.FC<MyAccountProps> = ({ session, children}) => {
         </main>
       </div>
     </SessionProvider>
+=======
+
+import Profile from "./profile/profile";
+
+const MyAccount = async () => {
+  return (
+    <>
+      <Profile />
+    </>
+>>>>>>> 7ca866d (BREAKING THE CODEBASE \0/)
   );
 };
 

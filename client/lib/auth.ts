@@ -1,23 +1,18 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { _db } from "./db";
 import { compare } from "bcrypt";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(_db),
-  session: { strategy: "jwt" },
   pages: {
     signIn: "/sign-in",
   },
   providers: [
     CredentialsProvider({
-      // The name to display on the sign in form (e.g. 'Sign in with...')
       name: "Credentials",
-      // The credentials is used to generate a suitable form on the sign in page.
-      // You can specify whatever fields you are expecting to be submitted.
-      // e.g. domain, username, password, 2FA token, etc.
-      // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
         email: {
           label: "Email",
@@ -34,7 +29,7 @@ export const authOptions: NextAuthOptions = {
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
 
-        if (!credentials?.email || !credentials?.password) {
+        if (!credentials || !credentials?.email || !credentials?.password) {
           return null;
         }
 
@@ -62,28 +57,9 @@ export const authOptions: NextAuthOptions = {
         };
       },
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      console.log(token, user);
-
-      if (user) {
-        return {
-          ...token,
-          name: user.name,
-        };
-      }
-      return token;
-    },
-    async session({ session, user, token }) {
-      console.log(session, user, token);
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          name: token.name,
-        },
-      };
-    },
-  },
 };

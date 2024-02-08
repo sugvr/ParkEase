@@ -22,6 +22,10 @@
       "@/*": ["./*"]
     }
   },
+<<<<<<< HEAD
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/Authentication/Auth.js", "app/myaccount/Switcher.jsx", "app/myaccount/BaseLayout.tsx"],
+=======
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/Authentication/Auth.js", "Components/Forms/SignInPage.tsx"],
+>>>>>>> 7ca866d (BREAKING THE CODEBASE \0/)
   "exclude": ["node_modules"]
 }

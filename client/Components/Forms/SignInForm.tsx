@@ -1,5 +1,10 @@
 'use client';
+<<<<<<< HEAD:client/Components/Forms/SignInPage.tsx
 import { set, useForm } from 'react-hook-form';
+=======
+
+import { useForm } from 'react-hook-form';
+>>>>>>> 7ca866d (BREAKING THE CODEBASE \0/):client/Components/Forms/SignInForm.tsx
 import {
   Form,
   FormControl,
@@ -12,13 +17,12 @@ import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '../LoginComponents/input';
 import { Button } from '../LoginComponents/button';
-import Link from 'next/link';
-import GoogleSignInButton from '../GoogleSignInButton';
 import Getcolor from "@/Constants/GetColors";
 import { signIn } from 'next-auth/react'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Loading from '../loading';
+
 
 const FormSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email'),
@@ -55,7 +59,7 @@ const SignInForm = () => {
     if (!signInData?.ok) {
       return;
     }
-    router.push('/myaccount');
+    //router.push('/myaccount');
     setIsLoading(false);
   };
 
@@ -95,23 +99,16 @@ const SignInForm = () => {
           />
         </div>
         <div className='flex items-center justify-center'>
+<<<<<<< HEAD:client/Components/Forms/SignInPage.tsx
           <Button className={`px-6 py-2 mt-6 border bg-${Getcolor(1)} rounded-full`} type='submit'>
           {isLoading ? <Loading /> : 'Sign In'}
+=======
+          <Button className={`px-6 py-2 mt-6 bg-${Getcolor(1)} rounded-full`} type='submit'>
+            {isLoading ? <Loading /> : 'Sign in'}
+>>>>>>> 7ca866d (BREAKING THE CODEBASE \0/):client/Components/Forms/SignInForm.tsx
           </Button>
         </div>
       </form>
-      <div className='mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400'>
-        or
-      </div>
-      <div className='flex items-center justify-center'>
-        <GoogleSignInButton>Sign in with Google</GoogleSignInButton>
-      </div>
-      <p className='text-center text-sm text-gray-600 mt-4'>
-        If you don&apos;t have an account, please&nbsp;
-        <Link className='text-blue-500 hover:underline' href='/sign-up'>
-          <span className={`text-${Getcolor(1)}`}>Sign Up</span>
-        </Link>
-      </p>
     </Form>
   );
 };
